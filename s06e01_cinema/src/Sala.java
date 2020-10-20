@@ -11,7 +11,7 @@ public class Sala {
     public int getLotacao(){
         return lugar.size();
     } 
-    public void out(String id, String fone, int indice){
+    public void out(String nome , String telefone, int indice){
         for(int i = 0; i < this.lugar.size(); i++)
             if(this.lugar.get(i) != null && lugar.get(i).cliente.equals(id , fone)){
                 this.lugar.set(i, null);
@@ -19,17 +19,17 @@ public class Sala {
             }
    
     }   
-    public boolean reservar(String id, String fone, int indice){
+    public boolean reservar(String nome, String telefone, int indice){
     	if(indice < 0  || indice >= this.getLotacao()) {
-    		System.out.println("Essa cadeira é não tem no cinema, mas se quer tanto compre um monte de cadeira e sente nesse Lugar");
+    		System.out.println("Essa cadeira Ã© nÃ£o tem no cinema, mas se quer tanto compre um monte de cadeira e sente nesse Lugar");
             return false;
     	}
     	if(lugar.get(indice) != null){
-            System.out.println("Meu amigo esse lugar ta ocupado, mas me diz o QUANTO você quer esse lugar ? $_$");
+            System.out.println("Meu amigo esse lugar ta ocupado, mas me diz o QUANTO vocÃª quer esse lugar ? $_$");
             return false;
     }
     	 if(lugar.get(indice) != null){
-             System.out.println("fail: cadeira ocupada");
+             System.out.println("cadeira ocupada meu amigo");
              return false;
          
     	 
@@ -63,5 +63,13 @@ public class Sala {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	void cancelar(String nome){
+        for(int i = 0; i < this.cadeiras.size(); i += 1){
+            Cliente cliente = this.cadeiras.get(i);
+            if((cliente != null) && (cliente.id.equals(nome))){
+                this.cadeiras.set(i, null);
+		    
+	    }
 
 }
