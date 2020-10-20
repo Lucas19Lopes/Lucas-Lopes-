@@ -16,8 +16,8 @@ public class Cinema {
 				System.out.println(sala);
 			}else if(ui[0].equals("reservar")){
 				sala.reservar(ui[1], ui[2], Integer.parseInt(ui[3]));
-			}else if(ui[1].equals("remove")){
-				sala.out(ui[1] == null );
+			}else if(ui[1].equals("remover")){
+				sala.remove(ui[1]);
 			}else{
 				System.out.println("fail: comando invalido");
 				}
