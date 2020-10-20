@@ -64,7 +64,7 @@ public class Sala {
 		
 	}
 	
-	void cancelar(String nome){
+	void remove(String nome){
         for(int i = 0; i < this.cadeiras.size(); i += 1){
             Cliente cliente = this.cadeiras.get(i);
             if((cliente != null) && (cliente.id.equals(nome))){
