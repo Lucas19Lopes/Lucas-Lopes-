@@ -1,21 +1,26 @@
 
 public class Cliente {
-	 public String id;
-	    public String fone;
-	   Cliente cliente;
-	    public Cliente(String id, String fone){
-	        this.id = id;
-	        this.fone = fone;
-	    }
-	    public String toString(){
-	        return id + ":" + fone;
-	    }
-		public boolean equals(String id, String fone) {
-			
-			this.id = id;
-	        this.fone = fone;
-			return false;
-
+	String nome;
+	String telefone;
+	
+	Cliente cliente;
+	
+	public Cliente(String nome, String telefone){
+		this.nome = nome;
+	        this.telefone = telefone;
+	    
+	}
+	
+	public String toString(){
+		return nome + ":" + telefone;
+	
+	
+	}
+	
+	
+	public boolean equals(String nome, String telefone) {
+		this.nome = nome;
+	        this.telefone = telefone;
+		return false;
 }
-
 }
