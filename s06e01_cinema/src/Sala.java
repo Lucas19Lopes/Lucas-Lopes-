@@ -65,10 +65,10 @@ public class Sala {
 	}
 	
 	void remove(String nome){
-        for(int i = 0; i < this.cadeiras.size(); i += 1){
-            Cliente cliente = this.cadeiras.get(i);
-            if((cliente != null) && (cliente.id.equals(nome))){
-                this.cadeiras.set(i, null);
+        for(int i = 0; i < this.cadeira.size(); i += 1){
+            Cliente cliente = this.cadeira.get(i);
+            if((cliente != null) && (cliente.nome.equals(nome))){
+                this.cadeira.set(i, null);
 		    
 	    }
 
