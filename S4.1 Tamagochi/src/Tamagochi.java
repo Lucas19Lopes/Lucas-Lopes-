@@ -77,7 +77,7 @@ public class Tamagochi {
 		if(limpa <= 0) {
 			this.limpa = 0;
 			this.vivo = false;
-			System.out.println("Seu bixinho morreu, você não deu o bannho nele. morreu sujo e com um calor dos infernos.");
+			System.out.println("Seu bixinho morreu, vocÃª nÃ£o deu o bannho nele. morreu sujo e com um calor dos infernos.");
 		
 		}else
 			this.limpa = limpa;
@@ -129,7 +129,7 @@ public class Tamagochi {
 		}
 	}
 	public void brinca() {
-		if(!this.vivo())
+		if(this.vivo())
 			return;
 		this.bixinho.setEnergia(this.bixinho.getEnergia() - 3);
 		this.bixinho.setFome(this.bixinho.getFome() - 1);
@@ -139,7 +139,7 @@ public class Tamagochi {
 	}
 	
 	public void banho() {
-		if(!this.vivo())
+		if(this.vivo())
 			return;
 		int v = this.bixinho.limpaMx - this.bixinho.getLimpa();
 		this.bixinho.setEnergia(this.bixinho.getEnergia() - 1);
@@ -148,17 +148,17 @@ public class Tamagochi {
 		
 	}
 	public void dormir() {
-		if(!this.vivo())
+		if(this.vivo())
 			return;
 		if(this.bixinho.energiaMx - this.bixinho.energia <= 5) {
-			System.out.println(" O bxinho que brincar e não está com sono");
+			System.out.println(" O bxinho que brincar e nÃ£o estÃ¡ com sono");
 			return;
 		}
 		this.bixinho.setEnergia(this.bixinho.getEnergiaMx());
 	}
 	
 	public void comer() {
-		if(!this.vivo())
+		if(this.vivo())
 			return;
 		this.bixinho.setEnergia(this.bixinho.getEnergia() - 1);
 		this.bixinho.setFome(this.bixinho.getFome() - 3);
