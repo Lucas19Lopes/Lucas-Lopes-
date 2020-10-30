@@ -114,9 +114,9 @@ class Maquina {
 		if(esp.get(indice) != null) {
 			esp.set(indice, null);
 		}else if(indice > getEsp()-1) {
-			System.out.println("Indice digitado não existe.");
+			System.out.println("Indice digitado nÃ£o existe.");
 		}else {
-			System.out.println("O produto não está na posição indicada" + indice);
+			System.out.println("O produto nÃ£o estÃ¡ na posiÃ§Ã£o indicada" + indice);
 		}
 	}
 	public void comprar(int indice) {
@@ -126,23 +126,23 @@ class Maquina {
 			if(produto != null) {
 				if(produto.indice == indice) {
 					if((this.saldoCliente > produto.preco) && (produto.quantidade > 0)) {
-						System.out.println("Você comprou um " + produto.getNome());
+						System.out.println("VocÃª comprou um " + produto.getNome());
 						setSaldo(this.saldoCliente - produto.preco);
 						produto.setQuantidade(produto.getQuantidade()-1);
 						break;
 					}
 					else if((this.saldoCliente > 0) && (produto.quantidade == 0)) {
-						System.out.println("fail: A espiral está sem produto.");
+						System.out.println("fail: A espiral estÃ¡ sem produto.");
 						break;
 					}
 					else if((this.saldoCliente < produto.preco) && (this.saldoCliente > 0 || 
 							this.saldoCliente == 0) && (produto.quantidade > 0)) {
-						System.out.println("fail: Seu saldo é insuficiente.");
+						System.out.println("fail: Seu saldo Ã© insuficiente.");
 						break;
 					}
 				}
 				else if(indice > sizeEspirais) {
-					System.out.println("fail: indice digitado não existe.");
+					System.out.println("fail: indice digitado nÃ£o existe.");
 					break;
 				}
 			}
@@ -150,9 +150,12 @@ class Maquina {
 		
 	}
 	public void troco() {
-		System.out.println("Você recebeu: " + getSaldoCliente() + "0 R$");
+		System.out.println("VocÃª recebeu: " + getSaldoCliente() + "0 R$");
 		setSaldoCliente(0);
 	}
+	public void dinheiro(float valor) {
+			setSaldoCliente(getSaldoCliente() + valor);
+		}
 	public String toString() {
 		int indice = 0;
 		String saida = "Saldo: " + getSaldoCliente() + "0\n";
